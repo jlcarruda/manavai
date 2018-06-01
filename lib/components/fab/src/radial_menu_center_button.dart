@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:manavai/components/fab/src/radial_menu_button.dart';
+import 'package:ManaVai/components/fab/src/radial_menu_button.dart';
 
 const double _defaultButtonSize = 48.0;
 

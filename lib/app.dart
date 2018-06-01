@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:manavai/pages/home.dart';
-//import 'package:manavai/pages/home_tutorial.dart';
+import 'package:ManaVai/components/fab.dart';
+import 'package:ManaVai/components/feed.dart';
+import 'package:ManaVai/pages/home.dart';
+import 'package:ManaVai/utils/menu_item_button.dart';
+//import 'package:ManaVai/pages/home_tutorial.dart';
 
 import 'config.dart';
 
@@ -21,7 +24,36 @@ class _ManaVaiAppState extends State<ManaVaiApp> {
       title: kAppTitle,
       debugShowCheckedModeBanner: false,
       theme: _buildThemeDark(),
-      home: new HomePage(title: kAppTitle),
+//      home: new HomePage(title: kAppTitle),
+      home: new DefaultTabController(
+          length: 3,
+          child: new Scaffold(
+            bottomNavigationBar: new TabBar(
+              tabs: <Widget>[
+                new Tab(icon: new Icon(Icons.details)),
+                new Tab(icon: new Icon(Icons.account_circle)),
+                new Tab(icon: new Icon(Icons.apps))
+              ],
+            ),
+            body: new TabBarView(
+              children: <Widget>[
+                new Feed(),
+                new Feed(),
+                new Feed(),
+              ]
+            ),
+            floatingActionButton: new MVFloatingActionButton(
+              onPressed: (){},
+              icon: new Icon(Icons.add, color: Colors.white),
+              menuButtons: <MenuItemButton>[
+                new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){}),
+                new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){}),
+                new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){})
+              ],
+            ),
+            floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          )
+      )
     );
   }
 

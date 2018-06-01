@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'package:manavai/utils/menu_item_button.dart';
+import 'package:ManaVai/utils/menu_item_button.dart';
 
 const double _radiansPerDegree = math.pi / 180;
 final double _startAngle = -180.0 * _radiansPerDegree;

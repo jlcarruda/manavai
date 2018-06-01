@@ -7,9 +7,10 @@ class CardPost {
   final String setName;
   final String rarity;
   final bool isReprint;
+  final String manaCost;
 
 
-  CardPost({this.id, this.oracleId, this.name, this.body, this.imageUris, this.setName, this.rarity, this.isReprint});
+  CardPost({this.id, this.oracleId, this.name, this.body, this.imageUris, this.setName, this.rarity, this.isReprint, this.manaCost});
 
   factory CardPost.fromJson(Map<String, dynamic> json) {
     return new CardPost(
@@ -20,7 +21,8 @@ class CardPost {
       imageUris: json['image_uris'],
       setName: json['set_name'],
       rarity: json['rarity'],
-      isReprint: json['reprint']
+      isReprint: json['reprint'],
+      manaCost: json['mana_cost']
     );
   }
 }

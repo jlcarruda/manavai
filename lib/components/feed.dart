@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:manavai/utils/restapi.dart';
-import 'package:manavai/utils/card_post.dart';
+import 'package:ManaVai/utils/restapi.dart';
+import 'package:ManaVai/utils/card_post.dart';
 
 class Feed extends StatefulWidget {
   @override
@@ -38,13 +38,16 @@ class FeedState extends State<Feed> {
           return new Text("${snapshot.error}");
         }
 
-        return new CircularProgressIndicator();
+        return new Scaffold(
+          body: new Center(
+            child: new CircularProgressIndicator(),
+          ),
+        );
       }
     );
   }
 
   Card _buildCard(CardPost card) {
-
     return new Card(
       child: new Material(
         color: Colors.white,
@@ -60,7 +63,21 @@ class FeedState extends State<Feed> {
                     )
                 )
               ),
-              new Image.network(card.imageUris['small']),
+              new Padding(
+                padding: new EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                child: new Align(
+                  alignment: Alignment.centerRight,
+                  child: new Text(card.manaCost, style: new TextStyle(
+                    color: Colors.black
+                  ),),
+                ),
+              ),
+              (card.imageUris != null) ?  new Image.network(
+                  card.imageUris['small']
+              ) : new Image.asset(
+                  'lib/images/placeholder_card.png',
+                width: 140.0,
+              ),
               new Padding(
                 padding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
                 child: new Text(card.body != null ? card.body : '', style: new TextStyle(color: Colors.black)),

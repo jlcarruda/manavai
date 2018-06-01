@@ -16,12 +16,11 @@ class RestApi {
       }
     );
     Map<String, dynamic> jsonObj = json.decode(response.body);
-    print(jsonObj);
     return _generatePostList(jsonObj['data']);
   }
 
   static List<CardPost> _generatePostList(List data) {
-    print(data);
+    print(data.length);
     return new List.generate(data.length, (int index) {
       return new CardPost.fromJson(data[index]);
     });
