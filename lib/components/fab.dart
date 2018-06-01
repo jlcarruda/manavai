@@ -2,7 +2,6 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import 'package:manavai/config.dart';
 import 'package:manavai/utils/menu_item_button.dart';
 
 const double _radiansPerDegree = math.pi / 180;
@@ -108,7 +107,7 @@ class MVFloatingActionButtonState extends State<MVFloatingActionButton> with Tic
             child: new FloatingActionButton(
               mini: true,
               onPressed: (widget.menuButtons != null) ? widget.menuButtons[index].onPressed : () {},
-              child: (widget.menuButtons != null) ? widget.menuButtons[index].icon : new Icon(Icons.ac_unit)
+              child: (widget.menuButtons != null) ? widget.menuButtons[index].icon : new Icon(Icons.ac_unit, color: Colors.white)
             )
           )
         );
@@ -129,45 +128,13 @@ class MVFloatingActionButtonState extends State<MVFloatingActionButton> with Tic
               return new Transform(
                 transform: new Matrix4.rotationZ(_controller.value * 0.5 * math.pi),
                 alignment: FractionalOffset.center,
-                child: new Icon(_controller.isDismissed ? Icons.add : Icons.close)
+                child: new Icon(_controller.isDismissed ? Icons.add : Icons.close, color: Colors.white)
               );
             }
           )
         )
       )
     );
-//    return new Column(
-//      mainAxisSize: MainAxisSize.min,
-//      children: <Widget>[
-//        (widget.isRadial) ? new CustomMultiChildLayout(
-//          delegate: new _MVFloatingActionButtonMenuLayout(
-//
-//              calculator: calculateItemAngle,
-//              itemCount: _menuButtons.length,
-//              radius: 40.0,
-//          ),
-//          children : children,
-//          ) : new Column(
-//            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//            mainAxisSize: MainAxisSize.min,
-//            children: children,
-//          ),
-//        new FloatingActionButton(
-//          onPressed: (widget.onPressed != null) ? widget.onPressed : superOnPressed(),
-//          tooltip: 'tooltip',
-//          child: (widget.onPressed != null) ? null : new AnimatedBuilder(
-//            animation: _controller,
-//            builder: (BuildContext context, Widget child) {
-//              return new Transform(
-//                transform: new Matrix4.rotationZ(_controller.value * 0.5 * math.pi),
-//                alignment: FractionalOffset.center,
-//                child: new Icon(_controller.isDismissed ? widget.icon : Icons.close),
-//              );
-//            },
-//          ),
-//        )
-//      ]
-//    );
   }
 
   List<Widget> _buildMenuButtons() {

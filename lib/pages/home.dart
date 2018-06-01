@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:manavai/components/fab.dart';
 import 'package:manavai/components/fab/flutter_radial_menu.dart';
 
-import 'package:manavai/config.dart';
 import 'package:manavai/utils/menu_item_button.dart';
+import 'package:manavai/components/feed.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -17,8 +17,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _counter = 0;
-  GlobalKey<RadialMenuState> _menuKey = new GlobalKey<RadialMenuState>();
-
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -38,32 +36,19 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: new Center(
-//
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
+        child: new Feed()
       ),
       floatingActionButton: new MVFloatingActionButton(
         onPressed: _incrementCounter,
-        icon: new Icon(Icons.add),
+        icon: new Icon(Icons.add, color: Colors.white),
         menuButtons: <MenuItemButton>[
-          new MenuItemButton(icon: new Icon(Icons.share), onPressed: (){print('BUTTON PRESSED');}),
-          new MenuItemButton(icon: new Icon(Icons.share), onPressed: (){print('BUTTON PRESSED');}),
-          new MenuItemButton(icon: new Icon(Icons.share), onPressed: (){print('BUTTON PRESSED');})
+          new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){}),
+          new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){}),
+          new MenuItemButton(icon: new Icon(Icons.share, color: Colors.white), onPressed: (){})
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
-
 
 }
