@@ -28,12 +28,15 @@ class _ManaVaiAppState extends State<ManaVaiApp> {
       home: new DefaultTabController(
           length: 3,
           child: new Scaffold(
-            bottomNavigationBar: new TabBar(
-              tabs: <Widget>[
-                new Tab(icon: new Icon(Icons.details)),
-                new Tab(icon: new Icon(Icons.account_circle)),
-                new Tab(icon: new Icon(Icons.apps))
-              ],
+            bottomNavigationBar: new Material(
+              color: kMVBottomAppBarDark,
+              child: new TabBar(
+                tabs: <Widget>[
+                  new Tab(icon: new Icon(Icons.details)),
+                  new Tab(icon: new Icon(Icons.account_circle)),
+                  new Tab(icon: new Icon(Icons.apps))
+                ],
+              ),
             ),
             body: new TabBarView(
               children: <Widget>[
