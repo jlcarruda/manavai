@@ -34,8 +34,10 @@ class FeedState extends State<Feed> {
               }
           );
         } else if (snapshot.hasError) {
-          print('ERROR');
-          return new Text("${snapshot.error}");
+          return new Center(
+            //TODO: create an Error component
+            child: new Text("${snapshot.error}"),
+          );
         }
 
         return new Scaffold(

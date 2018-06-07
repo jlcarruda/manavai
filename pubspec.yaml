@@ -2,7 +2,8 @@ name: ManaVai
 description: A application to connect MTG players who want to buy, sell or trade their cards.
 
 dependencies:
-  flutter_radial_menu: "^0.0.1"
+  flutter_radial_menu: ^0.0.1
+  charts_flutter: ^0.2.0
   flutter:
     sdk: flutter
 

@@ -105,6 +105,7 @@ class MVFloatingActionButtonState extends State<MVFloatingActionButton> with Tic
               )
             ),
             child: new FloatingActionButton(
+              heroTag: null,
               mini: true,
               onPressed: (widget.menuButtons != null) ? widget.menuButtons[index].onPressed : () {},
               child: (widget.menuButtons != null) ? widget.menuButtons[index].icon : new Icon(Icons.ac_unit, color: Colors.white)
