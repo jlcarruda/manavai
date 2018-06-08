@@ -1,5 +1,4 @@
 import 'package:ManaVai/config.dart';
-import 'package:ManaVai/pages/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ManaVai/components/fab.dart';
@@ -36,7 +35,7 @@ class _HomePageState extends State<HomePage> {
             ),
             body: new TabBarView(
                 children: <Widget>[
-                  new Login(),
+                  new Feed(),
                   new Feed(),
                   new Feed(),
                 ]

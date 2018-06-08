@@ -2,7 +2,6 @@ import 'package:ManaVai/pages/home.dart';
 import 'package:ManaVai/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:ManaVai/pages/home_tutorial.dart';
 
 import './config.dart';
 
@@ -23,7 +22,6 @@ class _ManaVaiState extends State<ManaVai> {
       debugShowCheckedModeBanner: false,
       theme: _buildThemeDark(),
       home: new Login(),
-
     );
   }
 

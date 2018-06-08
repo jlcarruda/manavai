@@ -65,24 +65,26 @@ class FeedState extends State<Feed> {
                     )
                 )
               ),
-              new Padding(
-                padding: new EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
-                child: new Align(
-                  alignment: Alignment.centerRight,
-                  child: new Text(card.manaCost, style: new TextStyle(
-                    color: Colors.black
-                  ),),
+              new Center(
+                child: new Padding(
+                  padding: new EdgeInsets.symmetric(vertical: 5.0, horizontal: 20.0),
+                  child: new Align(
+                    alignment: Alignment.centerRight,
+                    child: new Text(card.manaCost, style: new TextStyle(
+                      color: Colors.black
+                    ),),
+                  ),
                 ),
               ),
               (card.imageUris != null) ?  new Image.network(
                   card.imageUris['small']
               ) : new Image.asset(
-                  'lib/images/placeholder_card.png',
+                  'assets/placeholder_card.png',
                 width: 140.0,
               ),
               new Padding(
                 padding: new EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
-                child: new Text(card.body != null ? card.body : '', style: new TextStyle(color: Colors.black)),
+                child: new Center(child: new Text(card.body != null ? card.body : '', style: new TextStyle(color: Colors.black))),
               )
             ]
         ),
